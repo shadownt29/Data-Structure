@@ -1,24 +1,41 @@
 package Assignment1;
 
-public class UnorderedArray {
+public class OrderedArray {
     private Integer[] arr;
     private int nElems;
 
     // O(1) — just allocate array
-    public UnorderedArray(int max) {
+    public OrderedArray(int max) {
         arr = new Integer[max];
         nElems = 0;
     }
 
-    // O(1) amortized — append at end; O(n) only when resize triggers
+    // O(n) — binary search for position O(log n), but shifting is O(n)
     public void insert(int value) {
         if (nElems == arr.length) {
             resize(arr.length * 2);
         }
-        arr[nElems++] = value;
+        int insertIndex = insertionPoint(value);
+        for (int shiftIndex = nElems; shiftIndex > insertIndex; shiftIndex--) {
+            arr[shiftIndex] = arr[shiftIndex - 1];
+        }
+        arr[insertIndex] = value;
+        nElems++;
     }
 
-    // O(n) — linear search then shift left
+    // O(log n) — binary search for correct insertion index
+    private int insertionPoint(int value) {
+        int lowerBound = 0;
+        int upperBound = nElems - 1;
+        while (lowerBound <= upperBound) {
+            int midIndex = (lowerBound + upperBound) / 2;
+            if (arr[midIndex] < value) lowerBound = midIndex + 1;
+            else upperBound = midIndex - 1;
+        }
+        return lowerBound;
+    }
+
+    // O(n) — binary search O(log n), shift left O(n)
     public boolean delete(int value) {
         int foundIndex = find(value);
         if (foundIndex == -1) return false;
@@ -29,10 +46,15 @@ public class UnorderedArray {
         return true;
     }
 
-    // O(n) — must check every element (unsorted)
+    // O(log n) — binary search works because array is always sorted
     public int find(int value) {
-        for (int searchIndex = 0; searchIndex < nElems; searchIndex++) {
-            if (arr[searchIndex] != null && arr[searchIndex] == value) return searchIndex;
+        int lowerBound = 0;
+        int upperBound = nElems - 1;
+        while (lowerBound <= upperBound) {
+            int midIndex = (lowerBound + upperBound) / 2;
+            if (arr[midIndex] == value) return midIndex;
+            else if (arr[midIndex] < value) lowerBound = midIndex + 1;
+            else upperBound = midIndex - 1;
         }
         return -1;
     }
@@ -44,7 +66,7 @@ public class UnorderedArray {
         return arr[index];
     }
 
-    // O(1) — returns total capacity of arr[]
+    // O(1) — returns total capacity
     public int size() {
         return arr.length;
     }
@@ -54,7 +76,7 @@ public class UnorderedArray {
         return nElems;
     }
 
-    // O(n) — copy existing elements into new array
+    // O(n) — copy existing elements into new array, preserving order
     public void resize(int newSize) {
         Integer[] resizedArr = new Integer[newSize];
         int copyCount = Math.min(nElems, newSize);

@@ -19,19 +19,19 @@ public class Main {
         System.out.println("Delete 99: " + ua.delete(99));
         System.out.println("Count after delete: " + ua.count());
 
-//        System.out.println("\n=== OrderedArray ===");
-//        OrderedArray oa = new OrderedArray(3);
-//        oa.insert(5);
-//        oa.insert(2);
-//        oa.insert(8);
-//        oa.insert(1); // triggers resize
-//        System.out.println("Size (capacity): " + oa.size());
-//        System.out.println("Count (elements): " + oa.count());
-//        System.out.println("Find 8: index " + oa.find(8));
-//        System.out.println("Get index 0 (should be 1): " + oa.get(0));
-//        System.out.println("Delete 5: " + oa.delete(5));
-//        System.out.println("Delete 99: " + oa.delete(99));
-//        System.out.println("Count after delete: " + oa.count());
+        System.out.println("\n=== OrderedArray ===");
+        OrderedArray oa = new OrderedArray(3);
+        oa.insert(5);
+        oa.insert(2);
+        oa.insert(8);
+        oa.insert(1); // triggers resize
+        System.out.println("Size (capacity): " + oa.size());
+        System.out.println("Count (elements): " + oa.count());
+        System.out.println("Find 8: index " + oa.find(8));
+        System.out.println("Get index 0 (should be 1): " + oa.get(0));
+        System.out.println("Delete 5: " + oa.delete(5));
+        System.out.println("Delete 99: " + oa.delete(99));
+        System.out.println("Count after delete: " + oa.count());
 
         // test IndexOutOfBoundsException
         try {
