@@ -13,7 +13,7 @@ public class OrderedArray {
     // O(n) — binary search for position O(log n), but shifting is O(n)
     public void insert(int value) {
         if (nElems == arr.length) {
-            resize(Math.max(arr.length * 2, 1)); // prevent unresizable zero-size arrays
+            resize(Math.max(arr.length * 2, 1)); // use Math.max to prevent unresizable zero-size arrays
         }
         int insertIndex = insertionPoint(value);
         for (int shiftIndex = nElems; shiftIndex > insertIndex; shiftIndex--) {

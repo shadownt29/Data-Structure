@@ -13,7 +13,7 @@ public class UnorderedArray {
     // O(1) amortized — append at end; O(n) only when resize triggers
     public void insert(int value) {
         if (nElems == arr.length) {
-            resize(Math.max(arr.length * 2, 1)); // prevent unresizable zero-size arrays
+            resize(Math.max(arr.length * 2, 1)); // use Math.max to prevent unresizable zero-size arrays
         }
         arr[nElems++] = value;
     }
