@@ -5,7 +5,6 @@ public class UnorderedArray<T> {
     private int nElems;
 
     // O(1) — just allocate array
-    @SuppressWarnings("unchecked")
     public UnorderedArray(int max) {
         arr = (T[]) new Object[max];
         nElems = 0;
@@ -33,7 +32,7 @@ public class UnorderedArray<T> {
     // O(n) — must check every element (unsorted)
     public int find(T value) {
         for (int searchIndex = 0; searchIndex < nElems; searchIndex++) {
-            if (arr[searchIndex] != null && arr[searchIndex] == value) return searchIndex;
+            if (arr[searchIndex] != null && arr[searchIndex].equals(value)) return searchIndex;
         }
         return -1;
     }
@@ -56,7 +55,6 @@ public class UnorderedArray<T> {
     }
 
     // O(n) — copy existing elements into new array
-    @SuppressWarnings("unchecked")
     public void resize(int newSize) {
         T[] resizedArr = (T[]) new Object[newSize];
         int copyCount = Math.min(nElems, newSize);

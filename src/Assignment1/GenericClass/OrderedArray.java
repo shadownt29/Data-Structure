@@ -5,9 +5,8 @@ public class OrderedArray<T extends Comparable<T>> {
     private int nElems;
 
     // O(1) — just allocate array
-    @SuppressWarnings("unchecked")
     public OrderedArray(int max) {
-        arr = (T[]) new Object[max];
+        arr = (T[]) new Comparable[max];
         nElems = 0;
     }
 
@@ -79,9 +78,8 @@ public class OrderedArray<T extends Comparable<T>> {
     }
 
     // O(n) — copy existing elements into new array, preserving order
-    @SuppressWarnings("unchecked")
     public void resize(int newSize) {
-        T[] resizedArr = (T[]) new Object[newSize];
+        T[] resizedArr = (T[]) new Comparable[newSize];
         int copyCount = Math.min(nElems, newSize);
         for (int shiftIndex = 0; shiftIndex < copyCount; shiftIndex++) {
             resizedArr[shiftIndex] = arr[shiftIndex];

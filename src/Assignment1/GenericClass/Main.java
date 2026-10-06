@@ -1,28 +1,25 @@
 package Assignment1.GenericClass;
 
-
-import Assignment1.OrderedArray;
-import Assignment1.UnorderedArray;
-
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("=== UnorderedArray ===");
-        Assignment1.UnorderedArray ua = new UnorderedArray(3);
-        ua.insert(5);
-        ua.insert(2);
-        ua.insert(8);
-        ua.insert(1); // triggers resize
+        UnorderedArray<String> ua = new UnorderedArray<>(3);
+        ua.insert("a");
+        ua.insert("b");
+        ua.insert("c");
+        ua.insert("d"); // triggers resize
+        System.out.println();
         System.out.println("Size (capacity): " + ua.size());
         System.out.println("Count (elements): " + ua.count());
-        System.out.println("Find 8: index " + ua.find(8));
+        System.out.println("Find 8: index " + ua.find("c"));
         System.out.println("Get index 1: " + ua.get(1));
-        System.out.println("Delete 2: " + ua.delete(2));
-        System.out.println("Delete 99: " + ua.delete(99));
+        System.out.println("Delete 2: " + ua.delete("b"));
+        System.out.println("Delete 99: " + ua.delete("e"));
         System.out.println("Count after delete: " + ua.count());
 
         System.out.println("\n=== OrderedArray ===");
-        Assignment1.OrderedArray oa = new OrderedArray(3);
+        OrderedArray<Integer> oa = new OrderedArray<>(3);
         oa.insert(5);
         oa.insert(2);
         oa.insert(8);
