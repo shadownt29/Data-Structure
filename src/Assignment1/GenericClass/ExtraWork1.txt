@@ -1,5 +1,0 @@
-For extra points, you may modify your Assignment 1 implementation so that your array classes use Java Generic Classes instead of only supporting integers.
-
-Your updated implementation should be able to store and manage any data type, such as String, Double, or custom objects.
-
-You must reuse your Assignment 1 code and modify it to support generic types while maintaining the same functionalities and behaviors.
