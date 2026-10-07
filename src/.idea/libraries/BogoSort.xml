@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="BogoSort">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Bogosort/BogoSort.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
