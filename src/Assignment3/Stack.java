@@ -1,4 +1,4 @@
-package Assignment2;
+package Assignment3;
 
 public class Stack<T> {
     private T[] array;

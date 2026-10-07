@@ -1,4 +1,4 @@
-package Assignment2;
+package Assignment3;
 
 public class Queue<T> {
     private T[] array;
