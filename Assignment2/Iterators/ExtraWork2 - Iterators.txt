@@ -1,0 +1,3 @@
+For extra credit, you may extend your SinglyLinkedList and DoublyLinkedList implementations to support iterators. Create appropriate iterator classes that allow users to traverse the linked lists one element at a time without directly accessing the internal nodes.
+
+Your iterator implementation should support moving through the list and retrieving the current element. You are encouraged to follow the iterator concepts discussed in class or those used by Java collections. The design and functionality of your iterator classes will be considered when awarding extra credit.
