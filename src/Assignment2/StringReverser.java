@@ -2,7 +2,7 @@ package Assignment2;
 
 public class StringReverser {
 
-    // O(n) — pushes each character onto a stack, then pops to build reversed string
+    // O(n) — pushes each character onto a stack, then pops to get the reversed string
     public static String reverse(String input) {
         if (input == null || input.isEmpty()) return input;
 
@@ -11,11 +11,12 @@ public class StringReverser {
             stack.push(c);
         }
 
-        StringBuilder sb = new StringBuilder();
+        char[] result = new char[input.length()];
+        int i = 0;
         Character c;
         while ((c = stack.pop()) != null) {
-            sb.append(c);
+            result[i++] = c;
         }
-        return sb.toString();
+        return new String(result);
     }
 }

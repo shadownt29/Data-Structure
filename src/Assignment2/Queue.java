@@ -14,7 +14,7 @@ public class Queue<T> {
         count = 0;
     }
 
-    // O(1) amortized — O(n) only when resize occurs
+    // O(1) — O(n) only when resize occurs
     public void insert(T newItem) {
         if (count == array.length) {
             resize();
@@ -27,7 +27,7 @@ public class Queue<T> {
     // O(n) — doubles capacity and realigns elements from circular layout
     @SuppressWarnings("unchecked")
     private void resize() {
-        T[] newArray = (T[]) new Object[array.length * 2];
+        T[] newArray = (T[]) new Object[array.length * 2]; // doubling arrSize is more efficient than +1 increment [O(n) vs. O(n²)]
         for (int i = 0; i < count; i++) {
             newArray[i] = array[(front + i) % array.length];
         }
@@ -59,7 +59,7 @@ public class Queue<T> {
     }
 
     // O(n) — builds string from front to rear
-    @Override
+    @Override // replace the existing Java build-in toString() in Object class
     public String toString() {
         if (count == 0) return "[]";
         StringBuilder sb = new StringBuilder("[");

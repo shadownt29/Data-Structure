@@ -20,7 +20,7 @@ public class DelimiterChecker {
             }
         }
 
-        // Stack must be empty — all openers were matched
+        // Stack must be empty if all openers were matched
         return stack.peek() == null;
     }
 }
