@@ -1,0 +1,10 @@
+# 1. Ignore the IDE and build folders inside the src directory
+src/.idea/
+src/out/
+src/Data Structure.iml
+
+# 2. Ignore everything else in the root directory except README and src
+/*
+!.gitignore
+!README.md
+!src/

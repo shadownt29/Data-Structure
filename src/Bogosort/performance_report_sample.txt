@@ -1,0 +1,88 @@
+I. Small Dataset across 5 trials
+
+=== Sorting Algorithm Performance Report ===
+Algorithm under study: Bogo Sort
+Compared against: Bubble Sort, Selection Sort, Insertion Sort
+[93, 58, 55, 8, 46]
+
+---- Dataset: small (n = 5) ----
+Bogo Sort      | Attempts:    17 | Comparisons:    31 | Swaps:    68 | Runtime: 0.032 ms
+Bubble Sort    | Comparisons: 10 | Swaps/Movements: 9 | Runtime: 0.002 ms
+Selection Sort | Comparisons: 10 | Swaps/Movements: 4 | Runtime: 0.004 ms
+Insertion Sort | Comparisons: 13 | Swaps/Movements: 9 | Runtime: 0.002 ms
+
+
+=== Sorting Algorithm Performance Report ===
+Algorithm under study: Bogo Sort
+Compared against: Bubble Sort, Selection Sort, Insertion Sort
+
+---- Dataset: small (n = 5) ----
+Bogo Sort      | Attempts:    284 | Comparisons:    492 | Swaps:   1136 | Runtime: 0.481 ms
+Bubble Sort    | Comparisons:     10 | Swaps/Movements:      6 | Runtime: 0.003 ms
+Selection Sort | Comparisons:     10 | Swaps/Movements:      4 | Runtime: 0.004 ms
+Insertion Sort | Comparisons:     10 | Swaps/Movements:      6 | Runtime: 0.003 ms
+
+
+=== Sorting Algorithm Performance Report ===
+Algorithm under study: Bogo Sort
+Compared against: Bubble Sort, Selection Sort, Insertion Sort
+
+---- Dataset: small (n = 5) ----
+Bogo Sort      | Attempts:    152 | Comparisons:    261 | Swaps:    608 | Runtime: 0.286 ms
+Bubble Sort    | Comparisons:     10 | Swaps/Movements:     10 | Runtime: 0.003 ms
+Selection Sort | Comparisons:     10 | Swaps/Movements:      4 | Runtime: 0.004 ms
+Insertion Sort | Comparisons:     14 | Swaps/Movements:     10 | Runtime: 0.002 ms
+
+
+=== Sorting Algorithm Performance Report ===
+Algorithm under study: Bogo Sort
+Compared against: Bubble Sort, Selection Sort, Insertion Sort
+
+---- Dataset: small (n = 5) ----
+Bogo Sort      | Attempts:     46 | Comparisons:     77 | Swaps:    184 | Runtime: 0.109 ms
+Bubble Sort    | Comparisons:     10 | Swaps/Movements:      5 | Runtime: 0.004 ms
+Selection Sort | Comparisons:     10 | Swaps/Movements:      4 | Runtime: 0.004 ms
+Insertion Sort | Comparisons:      9 | Swaps/Movements:      5 | Runtime: 0.002 ms
+
+
+=== Sorting Algorithm Performance Report ===
+Algorithm under study: Bogo Sort
+Compared against: Bubble Sort, Selection Sort, Insertion Sort
+
+---- Dataset: small (n = 5) ----
+Bogo Sort      | Attempts:    113 | Comparisons:    201 | Swaps:    452 | Runtime: 0.248 ms
+Bubble Sort    | Comparisons:     10 | Swaps/Movements:      7 | Runtime: 0.004 ms
+Selection Sort | Comparisons:     10 | Swaps/Movements:      4 | Runtime: 0.003 ms
+Insertion Sort | Comparisons:     11 | Swaps/Movements:      7 | Runtime: 0.002 ms
+
+
+
+
+II. Medium Dataset
+
+=== Sorting Algorithm Performance Report ===
+Algorithm under study: Bogo Sort
+Compared against: Bubble Sort, Selection Sort, Insertion Sort
+
+---- Dataset: medium (n = 1000) ----
+Bubble Sort    | Comparisons: 499500 | Swaps/Movements: 240224 | Runtime: 6.208 ms
+Selection Sort | Comparisons: 499500 | Swaps/Movements: 999 | Runtime: 3.754 ms
+Insertion Sort | Comparisons: 241223 | Swaps/Movements: 240224 | Runtime: 3.566 ms
+
+Note: Bogo Sort is not tested at n=1,000 and n=1,000,000
+due to O(n x n!) complexity making it computationally infeasible.
+
+
+III. Large Dataset
+
+=== Sorting Algorithm Performance Report ===
+Algorithm under study: Bogo Sort
+Compared against: Bubble Sort, Selection Sort, Insertion Sort
+
+---- Dataset: large (n = 1000000) ----
+Bubble Sort    | Comparisons: 499999500000 | Swaps/Movements: 247508340376 | Runtime: 2768187.149 ms
+Selection Sort | Comparisons: 499999500000 | Swaps/Movements: 999999 | Runtime: 1175231.070 ms
+Insertion Sort | Comparisons: 247509340375 | Swaps/Movements: 247508340376 | Runtime: 536254.124 ms
+
+Note: Bogo Sort is not tested at n=1,000 and n=1,000,000
+due to O(n x n!) complexity making it computationally infeasible.
