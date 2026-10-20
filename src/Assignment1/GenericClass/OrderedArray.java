@@ -1,6 +1,6 @@
 package Assignment1.GenericClass;
 
-public class OrderedArray<T extends Comparable<T>> {
+public class OrderedArray<T extends Comparable<? super T>> {
     private T[] arr;
     private int nElems;
 

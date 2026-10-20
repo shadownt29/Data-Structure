@@ -1,61 +1,37 @@
 package Assignment3;
 
 public class Stack<T> {
-    private T[] array;
-    private int top;
+    private LinkedList<T> list;
 
-    @SuppressWarnings("unchecked") // Tell compiler to ignore type-safety warnings
+    // O(1) - arraySize is kept so the A2 constructor still works, but the list grows on its own
     public Stack(int arraySize) {
-        array = (T[]) new Object[arraySize > 0 ? arraySize : 1];
-        top = -1;
+        list = new LinkedList<>();
     }
 
-    // O(1) — O(n) only when resize occurs
+    // O(1) - insertFirst is O(1) and there is no resize anymore
     public void push(T newItem) {
-        if (top == array.length - 1) {
-            resize();
-        }
-        array[++top] = newItem;
+        list.insertFirst(newItem);
     }
 
-    // O(n) — doubles array capacity
-    @SuppressWarnings("unchecked")
-    private void resize() {
-        T[] newArray = (T[]) new Object[array.length * 2]; // doubling arrSize is more efficient than +1 increment [O(n) vs. O(n²)]
-        for (int i = 0; i <= top; i++) {
-            newArray[i] = array[i];
-        }
-        array = newArray;
-    }
-
-    // O(1) — removes and returns top element; null if empty
+    // O(1) - removes and returns top element; null if empty
     public T pop() {
-        if (top == -1) return null;
-        T item = array[top];
-        array[top--] = null;
+        T item = list.peekFirst();
+        list.deleteFirst();
         return item;
     }
 
-    // O(1) — returns top element without removing; null if empty
+    // O(1) - returns top element without removing; null if empty
     public T peek() {
-        if (top == -1) return null;
-        return array[top];
+        return list.peekFirst();
     }
 
-    // O(n) — builds string from top to bottom
+    // O(n) - builds string from top to bottom
     @Override // replace the existing Java build-in toString() in Object class
     public String toString() {
-        if (top == -1) return "[]";
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = top; i >= 0; i--) {
-            sb.append(array[i]);
-            if (i > 0) sb.append(", ");
-        }
-        sb.append("]");
-        return sb.toString();
+        return list.toString();
     }
 
-    // O(n) — prints the stack
+    // O(n) - prints the stack
     public void display() {
         System.out.println(toString());
     }
