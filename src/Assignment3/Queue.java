@@ -1,7 +1,7 @@
 package Assignment3;
 
 public class Queue<T> {
-    private LinkedList<T> list;
+    private final LinkedList<T> list;
 
     // O(1) - creates an empty queue backed by a linked list
     public Queue() {

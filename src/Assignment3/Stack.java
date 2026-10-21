@@ -1,7 +1,7 @@
 package Assignment3;
 
 public class Stack<T> {
-    private LinkedList<T> list;
+    private final LinkedList<T> list;
 
     // O(1) - creates an empty stack backed by a linked list
     public Stack() {
