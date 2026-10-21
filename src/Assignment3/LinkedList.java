@@ -31,7 +31,7 @@ public class LinkedList<T> {
         tail = newLink;
     }
 
-    // O(n) - walks to the link before the index; index <= 0 inserts first, index >= size inserts last
+    // O(n) - traverses to the link before the index; index <= 0 inserts first, index >= size inserts last
     public void insertAt(int index, T newItem) {
         if (index <= 0 || isEmpty()) {
             insertFirst(newItem);
@@ -60,7 +60,7 @@ public class LinkedList<T> {
         return true;
     }
 
-    // O(n) - singly linked, so we must walk to the second-to-last link; false if empty
+    // O(n) - singly linked, so we must traverse to the second-to-last link; false if empty
     public boolean deleteLast() {
         if (isEmpty()) return false;
         if (head == tail) {
@@ -77,7 +77,7 @@ public class LinkedList<T> {
         return true;
     }
 
-    // O(n) - walks to the link before the index; false if index is invalid
+    // O(n) - traverse to the link before the index; false if index is invalid
     public boolean deleteAt(int index) {
         if (isEmpty() || index < 0) return false;
         if (index == 0) return deleteFirst();

@@ -34,7 +34,7 @@ public class DoublyLinkedList<T> {
         tail = newLink;
     }
 
-    // O(n) - walks to the link before the index; index <= 0 inserts first, index >= size inserts last
+    // O(n) - traverses to the link before the index; index <= 0 inserts first, index >= size inserts last
     public void insertAt(int index, T newItem) {
         if (index <= 0 || isEmpty()) {
             insertFirst(newItem);
@@ -81,7 +81,7 @@ public class DoublyLinkedList<T> {
         return true;
     }
 
-    // O(n) - walks to the index; false if index is invalid
+    // O(n) - traverses to the index; false if index is invalid
     public boolean deleteAt(int index) {
         if (isEmpty() || index < 0) return false;
         if (index == 0) return deleteFirst();
