@@ -3,8 +3,8 @@ package Assignment3;
 public class Stack<T> {
     private LinkedList<T> list;
 
-    // O(1) - arraySize is kept so the A2 constructor still works, but the list grows on its own
-    public Stack(int arraySize) {
+    // O(1) - creates an empty stack backed by a linked list
+    public Stack() {
         list = new LinkedList<>();
     }
 

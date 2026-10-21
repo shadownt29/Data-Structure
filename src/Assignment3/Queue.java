@@ -3,8 +3,8 @@ package Assignment3;
 public class Queue<T> {
     private LinkedList<T> list;
 
-    // O(1) - arraySize is kept so the A2 constructor still works, but the list grows on its own
-    public Queue(int arraySize) {
+    // O(1) - creates an empty queue backed by a linked list
+    public Queue() {
         list = new LinkedList<>();
     }
 
