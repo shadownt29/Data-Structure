@@ -62,16 +62,4 @@ public class RecursiveSolution {
             return countUniquePaths(m - 1, n) + countUniquePaths(m, n - 1); // recursive step
         }
     }
-
-    public static void main(String[] args) {
-        int m = 4;
-        int n = 3;
-//        System.out.println(tri(5));
-//        System.out.println(fact(5));
-//        System.out.println(fib(6));
-        System.out.println(reverseStr("nigger"));
-//        System.out.println(hasChar("bird", 'i'));
-//        System.out.println(gcd(12, 8));
-//        System.out.printf("The total unique path(s) of %d by %d is %d.",m ,n ,countUniquePaths(m,n));
-    }
 }
